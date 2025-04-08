@@ -1,0 +1,104 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+    
+}
+
+/* Header */
+header {
+    background-color: #ff4081;
+    color: white;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Cart Section */
+#cart-section {
+    background: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Items */
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Total Price */
+p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* Buy Now Button */
+#buy-now {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+#buy-now:hover {
+    background-color: #e91e63;
+    transform: scale(1.05);
+}
+
+#buy-now:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #cart-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #cart-items li {
+        font-size: 16px;
+    }
+
+    #buy-now {
+        font-size: 18px;
+        padding: 12px 20px;
+    }
+}

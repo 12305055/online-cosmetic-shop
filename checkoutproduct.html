@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <header>
+        <h1>Purchased Products</h1>
+    </header>
+    <main>
+        <ul id="purchased-items"></ul>
+    </main>
+
+    <script>
+        // Load purchased items from local storage
+        const purchasedItems = JSON.parse(localStorage.getItem("cart")) || [];
+        const purchasedList = document.getElementById("purchased-items");
+
+        if (purchasedItems.length > 0) {
+            purchasedItems.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width:100px; height:100px;">
+                    <p>${item.name} - $${item.price}</p>
+                `;
+                purchasedList.appendChild(li);
+            });
+        } else {
+            purchasedList.innerHTML = "<p>No items purchased.</p>";
+        }
+
+        // Clear cart after purchase
+        localStorage.removeItem("cart");
+    </script>
+</body>
+</html>

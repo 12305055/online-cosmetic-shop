@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment</title>
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+
+   <div class="payment-div">
+       <h1>Online Payment Section</h1>
+       <h3>Card Detail</h3>
+
+       <form class="form" id="payment">
+           <div class="box">
+               <label for="card_number">Card Number : </label><br>
+               <input type="text" id="card_number" placeholder="Enter the Card Number" maxlength="16" oninput="validateCardNumber(this)"><br><br>
+
+               <label for="holder_name">Card Holder Name : </label><br>
+               <input type="text" id="holder_name" placeholder="Please enter Card Holder Name"><br><br>
+
+               <label for="cvv">CVV Number : </label><br>
+               <input type="text" id="cvv" placeholder="Please enter CVV number" maxlength="3" oninput="validateCVV(this)"><br><br>
+           </div>
+           <div>
+               <button type="submit" class="btn">Submit</button>
+           </div>
+       </form>
+
+       <script>
+           function validateCardNumber(input) {
+               input.value = input.value.replace(/\D/g, ''); // केवल नंबर टाइप करने दें
+               if (input.value.length > 16) {
+                   input.value = input.value.slice(0, 16); // 16 अंकों से अधिक नहीं
+               }
+           }
+
+           function validateCVV(input) {
+               input.value = input.value.replace(/\D/g, ''); // केवल नंबर टाइप करने दें
+               if (input.value.length > 3) {
+                   input.value = input.value.slice(0, 3); // 3 अंकों से अधिक नहीं
+               }
+           }
+
+           document.getElementById("payment").onsubmit = (e) => {
+               e.preventDefault();
+               const cardNumber = document.getElementById("card_number").value.trim();
+               const holderName = document.getElementById("holder_name").value.trim();
+               const cvv = document.getElementById("cvv").value.trim();
+
+               if (cardNumber.length !== 16) {
+                   alert("Please enter a valid 16-digit card number.");
+                   return;
+               }
+
+               if (cvv.length !== 3) {
+                   alert("Please enter a valid 3-digit CVV number.");
+                   return;
+               }
+
+            //    alert(`Card number: ${cardNumber}\nCard holder name: ${holderName}\nCVV number: ${cvv}`);
+            alert("payment succesfull");
+               window.location.href = "checkoutproduct.html"; // Redirect back to the main page
+           };
+       </script>
+   </div>
+
+</body>
+</html>

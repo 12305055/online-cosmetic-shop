@@ -1,0 +1,106 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff6f61, #ff4081);
+    color: white;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(40, 103, 128);
+}
+
+/* Purchased Items List */
+#purchased-items {
+    list-style: none;
+    padding: 0;
+}
+
+#purchased-items li {
+    background: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(33, 232, 56);
+    transition: transform 0.3s ease;
+}
+
+#purchased-items li:hover {
+    transform: scale(1.03);
+}
+
+/* Image Styling */
+#purchased-items li img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+    box-shadow: 0 4px 6px rgb(183, 105, 232);
+}
+
+/* Product Info */
+#purchased-items li p {
+    font-size: 18px;
+    font-weight: 500;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* No Items Purchased Message */
+#purchased-items p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #purchased-items li {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #purchased-items li img {
+        margin-bottom: 10px;
+    }
+
+    #purchased-items li p {
+        font-size: 16px;
+    }
+}
