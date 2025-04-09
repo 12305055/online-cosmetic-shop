@@ -61,7 +61,9 @@ buyNowButton.onclick = () => {
       alert("Your cart is empty.");
       return;
   }
- 
+ else{
+  alert("pass");
+ }
   window.location.href = "location.html"; 
  
 };
