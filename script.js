@@ -65,3 +65,5 @@ buyNowButton.onclick = () => {
   window.location.href = "location.html"; 
  
 };
+
+
