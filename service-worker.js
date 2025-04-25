@@ -58,6 +58,8 @@ self.addEventListener('activate', event => {
 //       return response || fetch(event.request)
 //     })
 //   );
+
+// Fetch event - serve cached content if offline
 self.addEventListener('fetch', event => {
     event.respondWith(
       caches.match(event.request).then(response => {

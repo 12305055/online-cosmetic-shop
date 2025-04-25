@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Registration</title>
+    <!-- <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3367D6" /> -->
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -77,7 +79,7 @@
         });
 
     // servise worker register
-    
+
         if ('serviceWorker' in navigator) {
      navigator.serviceWorker.register('/service-worker.js')
     .then(reg => console.log('Service Worker Registered!', reg))
